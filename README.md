@@ -194,8 +194,11 @@ Produces: index_incremental_results.csv
 
 Generated experiment outputs:
 pf_results.csv — PF layer buffer performance
+
 slotted_results.csv — Slotted page space utilisation
+
 index_bulk_results.csv — B+ Tree bulk build performance
+
 index_incremental_results.csv — Incremental B+ Tree build performance
 
 

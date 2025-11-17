@@ -82,9 +82,6 @@ variable:
 export CFLAGS="-std=gnu89 \
 -Wno-int-conversion -Wno-implicit-int -Wno-old-style-definition \
 -Wno-builtin-declaration-mismatch -Wno-implicit-function-declaration \
-```
-
-```
 -Wno-pointer-to-int-cast -Wno-return-type"
 ```
 3.1 Compile PF Layer
@@ -104,13 +101,15 @@ cc $CFLAGS -I./pflayer pflayer/pflayer.o pflayer/pf_experiment.o -o pf_experimen
 3.3 Compile Slotted Page Layer
 
 ```
-cc $CFLAGS -I./pflayer -c pflayer/spage.c -o pflayer/spage.o
-cc $CFLAGS -I./pflayer -c pflayer/analysis_tableslotted.c -o pflayer/analysis_tableslot
+cc $CFLAGS -I./pflayer -c pflayer/spage.c                 -o pflayer/spage.o
+cc $CFLAGS -I./pflayer -c pflayer/analysis_tableslotted.c -o pflayer/analysis_tableslotted.o
+
 cc $CFLAGS -I./pflayer \
-pflayer/pflayer.o \
-pflayer/spage.o \
-pflayer/analysis_tableslotted.o \
--o slotted_analysis
+    pflayer/pflayer.o \
+    pflayer/spage.o \
+    pflayer/analysis_tableslotted.o \
+    -o slotted_analysis
+
 ```
 3.4 Compile AM Layer
 
@@ -181,6 +180,15 @@ Produces: index_bulk_results.csv
 ./incremental
 ```
 Produces: index_incremental_results.csv
+
+## RUNNING ALL EXPERIMENTS
+```
+./pf_experiment      # pf_results.csv
+./slotted_analysis   # slotted_results.csv
+./bulk               # index_bulk_results.csv
+./incremental        # index_incremental_results.csv
+
+```
 
 ## 5. Output Summary
 

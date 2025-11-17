@@ -128,16 +128,15 @@ Bulk Build
 
 ```
 cc $CFLAGS -I./pflayer -I./amlayer -c amlayer/bulk.c -o amlayer/bulk.o
-cc $CFLAGS -I./pflayer -I./amlayer \
-pflayer/pflayer.o \
-amlayer/am.o amlayer/amfns.o amlayer/amglobals.o \
-amlayer/aminsert.o amlayer/amprint.o amlayer/amscan.o \
-```
 
-```
-amlayer/amsearch.o amlayer/amstack.o \
-amlayer/bulk.o \
--o bulk
+cc $CFLAGS -I./pflayer -I./amlayer \
+    pflayer/pflayer.o \
+    amlayer/am.o amlayer/amfns.o amlayer/amglobals.o \
+    amlayer/aminsert.o amlayer/amprint.o amlayer/amscan.o \
+    amlayer/amsearch.o amlayer/amstack.o \
+    amlayer/bulk.o \
+    -o bulk
+
 ```
 Incremental Build
 
